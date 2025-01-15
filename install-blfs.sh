@@ -23,6 +23,7 @@ echo "1. 디스크 파티션 생성 중..."
 parted --script $DISK mklabel gpt
 parted --script $DISK mkpart primary ext4 1MiB 100%
 mkfs.ext4 -F $LFS_PARTITION
+mkdir $LFS
 mount $LFS_PARTITION $LFS
 
 # 2. 디렉터리 및 권한 설정
